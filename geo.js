@@ -70,7 +70,7 @@ function initialize() {
 
 function process(key,value) {
     if(isInt(key) === false)
-        console.log(isInt(key) + " - " + key + " : "+value);
+        console.log(key + " : "+value);
 }
 
 function traverse(o,func) {
