@@ -69,14 +69,12 @@ function initialize() {
 //}
 
 function process(key,value) {
-    if(key.localeCompare("0") == 0 || key.localeCompare("1") == 0)
-        return;
     console.log(key + " : "+value);
 }
 
 function traverse(o,func) {
     for (var i in o) {
-        if(this !== null)
+        if(this !== null && !isInt(this))
             func.apply(this,[i,o[i]]);  
         if (o[i] !== null && typeof(o[i])=="object") {
             //going on step down in the object tree!!
@@ -85,6 +83,9 @@ function traverse(o,func) {
     }
 }
 
+function isInt(value) { 
+    return !isNaN(parseInt(value,10)) && (parseFloat(value,10) == parseInt(value,10)); 
+}
 
 function addPolygon(obj) {
     var PolyCoords = [];
