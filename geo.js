@@ -48,16 +48,16 @@ function initialize() {
                 var obj = data;
                 for (var i in obj){
                     switch(obj[i].Type){
-                        case "MultiPolygon":
+                        case "MULTIPOLYGON":
                             addMultiPolygon(obj[i].Coordinates);
                             break;
-                        case "Polygon":
+                        case "POLYGON":
                             addPolygon(obj[i].Coordinates,HexColor());
                             break;
-                        case "Line":
+                        case "LINESTRING ":
                             addLine(obj[i].Coordinates);
                             break;
-                        case "Point":
+                        case "POINT":
                             addPoint(obj[i].Coordinates);
                             break;
                     }
