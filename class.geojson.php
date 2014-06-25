@@ -36,7 +36,6 @@ class MyGeoJson{
         $this->DbUser = $db_user;
         $this->DbHost = $db_host;
         $this->Conn = new PDO("mysql:host={$this->DbHost};dbname={$this->DbName}",$this->DbUser,$this->DbPass);
-        $this->PostArray = $post;
     }
     
     # Set the current query
