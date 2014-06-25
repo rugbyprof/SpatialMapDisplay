@@ -59,7 +59,7 @@ function initialize() {
                             break;
                         case "Point":
                             addPoint(obj[i].geometry);
-                            break:
+                            break;
                     }
                 }
             });
