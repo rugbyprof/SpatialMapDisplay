@@ -64,7 +64,7 @@ class MyGeoJson{
             $temp = json_decode($this->WkbToJson($row['wkb']));
             print_r($temp);
             echo"<br><br>";
-            //$Data[$i][$temp['type']] = $temp['coordinates'];
+            $Data[$i][$temp['type']] = $temp['coordinates'];
             unset($row['wkb']);
             unset($row['SHAPE']);          
             $Data[$i]['properties'] = $row;
@@ -72,7 +72,7 @@ class MyGeoJson{
         }
 
         //header('Content-type: application/json');
-       // echo json_encode($Data, JSON_NUMERIC_CHECK); 
+       echo json_encode($Data, JSON_NUMERIC_CHECK); 
     }
     
     # Run the Geo Sql Query
