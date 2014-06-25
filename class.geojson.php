@@ -138,7 +138,7 @@ $sql2 = "
     LIMIT 10
 ";
 
-$sql = $sql1;
+$sql = $sql2;
 
 $MyGeo->RunQuery($sql);
 //$MyGeo->GetGeoJsonResult();
