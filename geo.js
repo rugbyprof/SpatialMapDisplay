@@ -69,12 +69,12 @@ function initialize() {
 //}
 
 function process(key,value) {
-    console.log(typeof key + " - " + key + " : "+value);
+    console.log(key.localeCompare("0") + " - " + key + " : "+value);
 }
 
 function traverse(o,func) {
     for (var i in o) {
-        if(this !== null && this != "0" && this != "1")
+        if(this !== null && this.localeCompare("0") != 0 && this.localeCompare("1") != 0)
             func.apply(this,[i,o[i]]);  
         if (o[i] !== null && typeof(o[i])=="object") {
             //going on step down in the object tree!!
