@@ -57,7 +57,7 @@ function initialize() {
                                 addPolygon(obj[i].geometry.coordinates,HexColor());
                             }else{
                                 for(var j = 0;j<obj[i].geometry.coordinates.length;j++){
-                                    addPolygon(obj[i].geometry.coordinates[j],HexColor());
+                                    addPolygon(obj[i].geometry.coordinates[0][j],HexColor());
                                 }
                             }
                             break;
