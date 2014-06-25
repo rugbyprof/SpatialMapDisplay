@@ -55,10 +55,12 @@ function initialize() {
 
 function traverse(jsonObj) {
     if( typeof jsonObj == "object" ) {
-        $.each(jsonObj, function(k,v) {
-            // k is either an array index or object key
-            traverse(v);
-        });
+        if(jsonObj !== null){
+            $.each(jsonObj, function(k,v) {
+                // k is either an array index or object key
+                traverse(v);
+            });
+        }
     }
     else {
         // jsonOb is a number or string
