@@ -53,8 +53,12 @@ function initialize() {
                             break;
                         case "Polygon":
                             console.log("Length: "+obj[i].geometry.coordinates.length);
-                            for(var j = 0;j<obj[i].geometry.coordinates.length;j++){
+                            if(obj[i].geometry.coordinates.length == 1){
                                 addPolygon(obj[i].geometry.coordinates,HexColor());
+                            }else{
+                                for(var j = 0;j<obj[i].geometry.coordinates.length;j++){
+                                    addPolygon(obj[i].geometry.coordinates[j],HexColor());
+                                }
                             }
                             break;
                         case "Line":
