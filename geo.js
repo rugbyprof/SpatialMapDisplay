@@ -72,6 +72,7 @@ function initialize() {
 function addMultiPolygon(obj){
     console.log("MultiPolygon: ");
     console.log(obj);
+    console.log(obj.length);   
     
     color = HexColor();
 
@@ -85,6 +86,7 @@ function addPolygon(obj,Color) {
     
     console.log("Polygon: ");
     console.log(obj);
+    console.log(obj.length);  
     
     var PolyCoords = [];
 
