@@ -69,7 +69,9 @@ function initialize() {
 //}
 
 function process(key,value) {
-    console.log(key.localeCompare("1") + " - " + key + " : "+value);
+    if(key.localeCompare("0") == 0 || key.localeCompare("1") == 0)
+        return;
+    console.log(key + " : "+value);
 }
 
 function traverse(o,func) {
