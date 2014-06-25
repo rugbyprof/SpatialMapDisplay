@@ -111,6 +111,7 @@ function addLine(obj){
 }
 
 function addPoint(obj) {
+    console.log(obj);
     marker = new google.maps.Marker({
         position: new google.maps.LatLng(obj.latitude,obj.longitude),
         title: obj.fullname,
