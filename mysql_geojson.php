@@ -44,7 +44,7 @@ $sql = "
 ";
 
 $sql = "
-SELECT *, AsWKB(SHAPE) AS wkb 
+SELECT year,month,day,location, AsWKB(SHAPE) AS wkb 
 FROM earth_quakes
 LIMIT 10
 ";
