@@ -71,7 +71,7 @@ class MyGeoJson{
             $i++;
         }
 
-        //header('Content-type: application/json');
+       header('Content-type: application/json');
        echo json_encode($Data, JSON_NUMERIC_CHECK); 
     }
     
