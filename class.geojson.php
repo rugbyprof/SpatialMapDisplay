@@ -64,7 +64,8 @@ class MyGeoJson{
             $temp = json_decode($this->WkbToJson($row['wkb']));
             //print_r($temp);
             //echo"<br><br>";
-            $Data[$i][$temp->type] = $temp->coordinates;
+            $Data[$i]['Type'] = $temp->type;
+            $Data[$i]['Coordinates'] = $temp->coordinates;
             unset($row['wkb']);
             unset($row['SHAPE']);          
             $Data[$i]['properties'] = $row;
