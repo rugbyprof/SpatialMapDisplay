@@ -70,9 +70,9 @@ function initialize() {
 }
 
 function addMultiPolygon(obj){
-    console.log("MultiPolygon: ");
-    console.log(obj);
-    console.log(obj.length);   
+    //console.log("MultiPolygon: ");
+    //console.log(obj);
+    //console.log(obj.length);   
     
     color = HexColor();
 
