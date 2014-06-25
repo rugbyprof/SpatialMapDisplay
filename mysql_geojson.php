@@ -14,7 +14,7 @@ function wkb_to_json($wkb) {
     return $geom->out('json');
 }
 
-if(isset($argv[1]) && $argv[1]=='debug' || $_GET['debug']){
+if(isset($argv[1]) && $argv[1]=='debug' || isset($_GET['debug']) && $_GET['debug']){
 	$_POST['lat'] = 33.546;
 	$_POST['lng'] = -122.546;
 	$debug = true;
