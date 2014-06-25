@@ -46,7 +46,7 @@ function initialize() {
                 //data = JSON.parse(data);
                 var obj = data.features;
                 for (var i in obj){
-                    traverse(obj[i]);
+                    traverse(obj[i],process);
                     console.log(obj[i]);
                     //console.log("----------------------------------------");
                 }
@@ -80,8 +80,8 @@ function process(key,value) {
 
 function traverse(o,func) {
     for (var i in o) {
-        if (o[i] !== null && typeof(o[i])=="object") {
-            func.apply(this,[i,o[i]]);  
+        func.apply(this,[i,o[i]]);
+        if (o[i] !== null && typeof(o[i])=="object") {  
             //going on step down in the object tree!!
             traverse(o[i],func);
         }
