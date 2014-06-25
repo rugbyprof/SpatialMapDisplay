@@ -49,10 +49,13 @@ FROM earth_quakes
 LIMIT 10
 ";
 
+$sql = $sql1;
+
 # Try query or error
-$rs = $conn->query($sql1);
+$rs = $conn->query($sql);
 if (!$rs) {
     echo 'An SQL error occured.\n';
+    print_r($sql);
     exit;
 }
 
