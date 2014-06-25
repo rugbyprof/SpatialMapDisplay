@@ -69,7 +69,7 @@ function initialize() {
 //}
 
 function process(key,value) {
-    console.log(key.localeCompare("0") + " - " + key + " : "+value);
+    console.log(key.localeCompare("1") + " - " + key + " : "+value);
 }
 
 function traverse(o,func) {
