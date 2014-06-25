@@ -25,11 +25,11 @@ function initialize() {
         var lat = event.latLng.lat();
         var lng = event.latLng.lng();
 
-        //console.log("lat: " + lat);
-        //console.log("lng: " + lng);
+        console.log("lat: " + lat);
+        console.log("lng: " + lng);
         
-        //console.log("Volcanoes: " + $('#volcanoes').is(':checked'));
-        //console.log("Earthquakes: " + $('#earthquakes').is(':checked'));        
+        console.log("Volcanoes: " + $('#volcanoes').is(':checked'));
+        console.log("Earthquakes: " + $('#earthquakes').is(':checked'));        
 
         var echecked = $('#earthquakes').is(':checked');
         var vchecked = $('#volcanoes').is(':checked');
@@ -44,7 +44,7 @@ function initialize() {
         $.post("class.geojson.php", PostData)
             .done(function( data ) {
                 //data = JSON.parse(data);
-                iterate(data.features,process);
+                traverse(data.features,process);
                 //console.log(data.Poly.length);
                 //deleteMarkers();
                 //addPolygon(data.Poly);
@@ -69,7 +69,7 @@ function initialize() {
 //}
 
 function process(key,value) {
-    //if(isInt(key) === true)
+    if(isInt(key) === true)
         console.log(key + " : "+value);
 }
 
@@ -85,11 +85,10 @@ function traverse(o,func) {
 
 function iterate(o,func) {
     for (var i in o) {
-        func.apply(this,[i,o[i]]);
-        console.log(i);
+        func.apply(this,[i,o[i]]);  
         if (o[i] !== null && typeof(o[i])=="object") {
             //going on step down in the object tree!!
-            //iterate(o[i],func);
+            traverse(o[i],func);
         }
     }
 }
