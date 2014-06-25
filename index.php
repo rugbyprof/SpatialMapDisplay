@@ -29,7 +29,7 @@
     
     <!-- Include Jquery to help with simplifying javascript syntax  -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="./geo.js">
+    <script src="./geo.js"></script>
     <script>
 
         //Add a listener that runs "initialize" when page is done loading.
@@ -47,3 +47,4 @@
 </section>
   </body>
 </html>
+
