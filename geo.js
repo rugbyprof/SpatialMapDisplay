@@ -85,7 +85,8 @@ function traverse(o,func) {
 
 function iterate(o,func) {
     for (var i in o) {
-        func.apply(this,[i,o[i]]);  
+        func.apply(this,[i,o[i]]);
+        console.log(i);
         if (o[i] !== null && typeof(o[i])=="object") {
             //going on step down in the object tree!!
             //iterate(o[i],func);
