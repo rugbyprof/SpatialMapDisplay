@@ -62,7 +62,7 @@ function traverse(jsonObj) {
     }
     else {
         // jsonOb is a number or string
-        console.log(jsonOB);
+        console.log(jsonObj);
     }
 }
 
