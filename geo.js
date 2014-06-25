@@ -38,7 +38,7 @@ function initialize() {
             volcanoes:vchecked
         }
 
-        $.post( "backend.php", PostData)
+        $.post("mysql_geojson.php", PostData)
             .done(function( data ) {
                 data = JSON.parse(data);
                 HandleGeoJson(data);
