@@ -47,7 +47,6 @@ function initialize() {
                 deleteMarkers();
                 var obj = data.features;
                 for (var i in obj){
-                    console.log("i:"+i);
                     switch(obj[i].geometry.type){
                         case "MultiPolygon":
                             addMultiPolygon(obj[i].geometry);
@@ -72,7 +71,7 @@ function addMultiPolygon(obj){
 
     color = HexColor();
     
-    console.log("MultiPolygon: "+obj);
+    console.log(obj);
     
     for(var i=0;i<obj.length;i++){
         addPolygon(obj,color);
@@ -82,7 +81,7 @@ function addMultiPolygon(obj){
 
 function addPolygon(obj,c) {
     
-    console.log("Polygon: "+obj);
+    console.log(obj);
     
     Color = typeof c !== 'undefined' ? c : HexColor();
     
