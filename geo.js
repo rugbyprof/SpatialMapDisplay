@@ -41,10 +41,10 @@ function initialize() {
             volcanoes:vchecked
         }
 
-        $.post("mysql_geojson.php", PostData)
+        $.post("class.geojson.php", PostData)
             .done(function( data ) {
                 //data = JSON.parse(data);
-                traverse2(data,process);
+                traverse(data,process);
                 //console.log(data.Poly.length);
                 //deleteMarkers();
                 //addPolygon(data.Poly);
@@ -53,31 +53,31 @@ function initialize() {
 
 }
 
-function traverse(jsonObj) {
-    if( typeof jsonObj == "object" ) {
-        if(jsonObj !== null){
-            $.each(jsonObj, function(k,v) {
-                // k is either an array index or object key
-                traverse(v);
-            });
-        }
-    }
-    else {
-        // jsonOb is a number or string
-        console.log(jsonObj);
-    }
-}
+//function traverse(jsonObj) {
+//    if( typeof jsonObj == "object" ) {
+//        if(jsonObj !== null){
+//            $.each(jsonObj, function(k,v) {
+//                // k is either an array index or object key
+//                traverse(v);
+//            });
+//        }
+//    }
+//    else {
+//        // jsonOb is a number or string
+//        console.log(jsonObj);
+//    }
+//}
 
 function process(key,value) {
     console.log(key + " : "+value);
 }
 
-function traverse2(o,func) {
+function traverse(o,func) {
     for (var i in o) {
         func.apply(this,[i,o[i]]);  
         if (o[i] !== null && typeof(o[i])=="object") {
             //going on step down in the object tree!!
-            traverse2(o[i],func);
+            traverse(o[i],func);
         }
     }
 }
