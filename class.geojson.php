@@ -61,7 +61,8 @@ class MyGeoJson{
         
         # Loop through rows to build feature arrays
         while ($row = $this->Result->fetch(PDO::FETCH_ASSOC)) {
-            $Data[$i]['Wkt'] = $this->WkbToJson($row['wkb']);
+            $temp = $this->WkbToJson($row['wkb']);
+            $Data[$i][$temp['type']] = $temp['coordinates'];
             unset($row['wkb']);
             unset($row['SHAPE']);          
             $Data[$i]['properties'] = $row;
