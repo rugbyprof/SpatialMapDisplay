@@ -11,7 +11,7 @@
 # Include required geoPHP library and define wkb_to_json function
 include_once('geoPHP/geoPHP.inc');
 
-class GeoJson{
+class MyGeoJson{
     var $conn;          // connection handle for mysql pdo class
     var $DbHost;        // e.g. localhost
     var $DbName;        // Database name
@@ -119,7 +119,7 @@ LIMIT 10
 
 $sql = $sql1;
 
-$MyGeo = new GeoJson('localhost','5443','5443','localhost',$_POST);
+$MyGeo = new MyGeoJson('localhost','5443','5443','localhost',$_POST);
 
 if(isset($argv[1]) && $argv[1]=='debug' || isset($_GET['debug']) && $_GET['debug']){
     $_POST['lat'] = 33.546;
