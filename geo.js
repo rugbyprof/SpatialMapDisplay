@@ -47,8 +47,9 @@ function initialize() {
                 var obj = data.features;
                 for (var i in obj){
                     traverse(obj[i],process);
+                    console.log(obj.features.geometry.type);
                     console.log(obj[i]);
-                    //console.log("----------------------------------------");
+                    console.log("----------------------------------------");
                 }
                 //console.log(data.Poly.length);
                 //deleteMarkers();
