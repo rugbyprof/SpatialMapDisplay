@@ -40,19 +40,41 @@ class MyGeoJson{
     
     # Set the current query
     public function RunQuery($sql){
+        
         $this->Sql = $sql;
-        $this->ExecuteGeoQuery();
-    }
-    
-    # Run the Geo Sql Query
-    public function ExecuteGeoQuery(){ 
-       # Try query or error
+        
+        # Try query or error
         $this->Result = $this->Conn->query($this->Sql);
+
         if (!$this->Result) {
             echo 'An SQL error occured.\n';
             print_r($this->Sql);
             exit;
         }
+        $this->ExecuteGeoQuery();
+        $this->Conn = NULL; 
+    }
+    
+    public function GetSimpleResult(){ 
+
+        $Data = array();
+        $i = 0;
+        
+        # Loop through rows to build feature arrays
+        while ($row = $this->Result->fetch(PDO::FETCH_ASSOC)) {
+            $Data[$i]['Wkt'] = $this->WkbToJson($row['wkb']);
+            unset($row['wkb']);
+            unset($row['SHAPE']);          
+            $Data[$i]['properties'] = $row;
+            $i++;
+        }
+
+        header('Content-type: application/json');
+        echo json_encode($Data, JSON_NUMERIC_CHECK); 
+    }
+    
+    # Run the Geo Sql Query
+    public function GetGeoJsonResult(){ 
 
         # Loop through rows to build feature arrays
         while ($row = $this->Result->fetch(PDO::FETCH_ASSOC)) {
@@ -68,8 +90,6 @@ class MyGeoJson{
             # Add feature arrays to feature collection array
             array_push($this->GeoJsonArray['features'], $feature);
         }
-
-        $this->Conn = NULL; 
         
         header('Content-type: application/json');
         echo json_encode($this->GeoJsonArray, JSON_NUMERIC_CHECK);       
@@ -118,4 +138,6 @@ $sql2 = "
 $sql = $sql1;
 
 $MyGeo->RunQuery($sql);
+//$MyGeo->GetGeoJsonResult();
+$MyGeo->GetSimpleResult();
 
