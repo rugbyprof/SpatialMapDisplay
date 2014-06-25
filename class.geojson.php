@@ -17,7 +17,6 @@ class MyGeoJson{
     var $DbName;        // Database name
     var $DbPass;        // Database password
     var $DbUser;        // Database user
-    var $Debug;         // Turn debugging on
     var $GeoJsonArray;  // Result array of GeoJson data
     var $Result;        // Sql Result Handle
     var $Sql;           // Sql query
@@ -25,7 +24,6 @@ class MyGeoJson{
     public function __construct($db_name,$db_user,$db_pass,$db_host,$post){
         $this->Sql = null;
         $this->Result = null;
-        $this->Debug = false;
         
         # Build GeoJSON feature collection array
         $this->GeoJsonArray = array(
@@ -39,11 +37,6 @@ class MyGeoJson{
         $this->DbHost = $db_host;
         $this->Conn = new PDO("mysql:host={$this->DbHost};dbname={$this->DbName}",$this->DbUser,$this->DbPass);
         $this->PostArray = $post;
-    }
-    
-    public function Debug($argv,$debug=true){
-        $this->Debug = true;
-
     }
     
     # Set the current query
@@ -98,7 +91,6 @@ $MyGeo = new MyGeoJson('5443_SpatialData','5443','5443','localhost',$_POST);
 if(isset($argv[1]) && $argv[1]=='debug' || isset($_GET['debug']) && $_GET['debug']){
     $_POST['lat'] = 33.546;
     $_POST['lng'] = -122.546;
-    $MyGeo->Debug(true);
 }
 
 $sql1 = "
