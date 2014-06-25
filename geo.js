@@ -74,7 +74,7 @@ function process(key,value) {
 
 function traverse(o,func) {
     for (var i in o) {
-        if(this !== null && this !== 0 && this !== 1)
+        if(this !== null && this !== '0' && this !== '1')
             func.apply(this,[i,o[i]]);  
         if (o[i] !== null && typeof(o[i])=="object") {
             //going on step down in the object tree!!
