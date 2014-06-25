@@ -74,7 +74,7 @@ function addMultiPolygon(obj){
     color = HexColor();
 
     for(var i=0;i<obj.length;i++){
-        addPolygon(obj.coordinates[i],color);
+        //addPolygon(obj.coordinates[i],color);
     }
     
 }
