@@ -47,6 +47,7 @@ function initialize() {
                 deleteMarkers();
                 var obj = data.features;
                 for (var i in obj){
+                    console.log("i:"+i);
                     switch(obj[i].geometry.type){
                         case "MultiPolygon":
                             addMultiPolygon(obj[i].geometry);
