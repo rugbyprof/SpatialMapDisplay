@@ -48,6 +48,7 @@ function initialize() {
                 var obj = data.features;
                 for (var i in obj){
                     console.log("Type: "+obj[i].geometry.type);
+                    console.log(obj[i].geometry);
                     switch(obj[i].geometry.type){
                         case "MultiPolygon":
                             addMultiPolygon(obj[i].geometry);
@@ -59,7 +60,6 @@ function initialize() {
                                 iterate(obj[i].geometry.coordinates,process);
 //                                for(var j = 0;j<obj[i].geometry.coordinates.length;j++){
 //                                    addPolygon(obj[i].geometry.coordinates[0][j],HexColor());
-//                                    
 //                                }
                             }
                             break;
