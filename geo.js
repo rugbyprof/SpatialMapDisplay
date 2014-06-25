@@ -89,10 +89,12 @@ function addPolygon(obj,Color) {
     console.log(obj.length);  
     
     var PolyCoords = [];
-
-    for(i=0;i<obj.length;i++){
-        var latlng = new google.maps.LatLng(obj[i][1],obj[i][0]);
-        PolyCoords.push(latlng);
+    
+    for (var i in obj){
+        for(var j=0;j<obj[i].length;j++){
+            var latlng = new google.maps.LatLng(obj[i][j][1],obj[i][j][0]);
+            PolyCoords.push(latlng);
+        }
     }
 
     var polygon = new google.maps.Polygon({
