@@ -150,7 +150,7 @@ $sql2 = "
 
 $sql3 = "
     SELECT 
-        AsWKB(SHAPE) AS wkb,
+        AsWKB(SHAPE) AS wkb
     FROM railroad
     LIMIT 30
 ";
