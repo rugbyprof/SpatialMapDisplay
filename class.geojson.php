@@ -126,7 +126,7 @@ $sql1 = "
 		69*haversine(latitude,longitude,latpoint, longpoint) AS distance_in_miles
 	FROM military_installations
 	JOIN (
-	SELECT  {$_POST['lat']}  AS latpoint,  {$_POST['lng']} AS longpoint
+	   SELECT  {$_POST['lat']}  AS latpoint,  {$_POST['lng']} AS longpoint
 	) AS p
 	ORDER BY distance_in_miles
 	LIMIT 5
@@ -142,13 +142,25 @@ $sql2 = "
         69*haversine(latitude,longitude,latpoint, longpoint) AS distance_in_miles
     FROM earth_quakes
 	JOIN (
-	SELECT  {$_POST['lat']}  AS latpoint,  {$_POST['lng']} AS longpoint
+	   SELECT  {$_POST['lat']}  AS latpoint,  {$_POST['lng']} AS longpoint
 	) AS p
 	ORDER BY distance_in_miles
     LIMIT 10
 ";
 
-$sql = $sql2;
+$sql3 = "
+    SELECT 
+        AsWKB(SHAPE) AS wkb,
+        69*haversine(latitude,longitude,latpoint, longpoint) AS distance_in_miles
+    FROM railroad
+	JOIN (
+	   SELECT  {$_POST['lat']}  AS latpoint,  {$_POST['lng']} AS longpoint
+	) AS p
+	ORDER BY distance_in_miles
+    LIMIT 30
+";
+
+$sql = $sql3;
 
 $MyGeo->RunQuery($sql);
 //$MyGeo->GetGeoJsonResult();
