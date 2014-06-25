@@ -79,10 +79,10 @@ function initialize() {
 function addMultiPolygon(obj){
 
     color = HexColor();
-    iterate(obj.coordinates,process);
-//    for(var i=0;i<obj.coordinates.length;i++){
-//        addPolygon(obj.coordinates[i],color);
-//    }
+
+    for(var i=0;i<obj.coordinates.length;i++){
+        addPolygon(obj.coordinates[i],color);
+    }
     
 }
 
