@@ -47,27 +47,20 @@ function initialize() {
                 deleteMarkers();
                 var obj = data;
                 for (var i in obj){
-                    console.log(obj[i]);
-                    console.log(obj[i][0]);
-                    switch(obj[i]){
+                    //console.log(obj[i]);
+                    //console.log(obj[i].Type);
+                    switch(obj[i].Type){
                         case "MultiPolygon":
-                            addMultiPolygon(obj[i].geometry);
+                            addMultiPolygon(obj[i].Coordinates);
                             break;
                         case "Polygon":
-                            if(obj[i].geometry.coordinates.length == 1){
-                                addPolygon(obj[i].geometry.coordinates,HexColor());
-                            }else{
-                                iterate(obj[i].geometry.coordinates,process);
-//                                for(var j = 0;j<obj[i].geometry.coordinates.length;j++){
-//                                    addPolygon(obj[i].geometry.coordinates[0][j],HexColor());
-//                                }
-                            }
+                            addPolygon(obj[i].Coordinates);
                             break;
                         case "Line":
-                            addLine(obj[i].geometry);
+                            addLine(obj[i].Coordinates);
                             break;
                         case "Point":
-                            addPoint(obj[i].geometry);
+                            addPoint(obj[i].Coordinates);
                             break;
                     }
                 }
@@ -80,7 +73,7 @@ function addMultiPolygon(obj){
 
     color = HexColor();
 
-    for(var i=0;i<obj.coordinates.length;i++){
+    for(var i=0;i<obj.length;i++){
         addPolygon(obj.coordinates[i],color);
     }
     
