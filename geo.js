@@ -43,7 +43,7 @@ function initialize() {
 
         $.post("mysql_geojson.php", PostData)
             .done(function( data ) {
-                data = JSON.parse(data);
+                //data = JSON.parse(data);
                 HandleGeoJson(data);
                 //console.log(data.Poly.length);
                 //deleteMarkers();
