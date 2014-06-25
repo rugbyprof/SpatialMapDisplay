@@ -21,7 +21,7 @@ class MyGeoJson{
     var $Result;        // Sql Result Handle
     var $Sql;           // Sql query
 
-    public function __construct($db_name,$db_user,$db_pass,$db_host,$post){
+    public function __construct($db_name,$db_user,$db_pass,$db_host){
         $this->Sql = null;
         $this->Result = null;
         
@@ -86,7 +86,7 @@ class MyGeoJson{
 /////////////////////////////////////////////////////////////////////////////////////
 //Main
 
-$MyGeo = new MyGeoJson('5443_SpatialData','5443','5443','localhost',$_POST);
+$MyGeo = new MyGeoJson('5443_SpatialData','5443','5443','localhost');
 
 if(isset($argv[1]) && $argv[1]=='debug' || isset($_GET['debug']) && $_GET['debug']){
     $_POST['lat'] = 33.546;
