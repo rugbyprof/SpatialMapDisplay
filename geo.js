@@ -39,13 +39,18 @@
 		$.post( "backend.php", PostData)
 		  .done(function( data ) {
 			data = JSON.parse(data);
+            HandleGeoJson(data);
 			console.log(data.Poly.length);
 			deleteMarkers();
     		addPolygon(data.Poly);
 		  });
 	  });  
 	  
-	}	
+	}
+
+    function HandleGeoJson(obj){
+        console.log(obj);
+    }
 	
 	function addPolygon(obj) {
 		var PolyCoords = [];
@@ -104,5 +109,3 @@
 		polygons = [];
 	}
 
-	//Add a listener that runs "initialize" when page is done loading.
-	google.maps.event.addDomListener(window, 'load', initialize);
