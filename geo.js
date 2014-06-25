@@ -69,7 +69,7 @@ function initialize() {
 //}
 
 function process(key,value) {
-    console.log(key + " : "+value);
+    console.log(isInt(key) + " - " + key + " : "+value);
 }
 
 function traverse(o,func) {
