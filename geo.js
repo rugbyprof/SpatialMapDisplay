@@ -1,6 +1,7 @@
 	var map;
 	var markers = [];
 	var polygons = [];
+    var temp = [];
 
 	//Runs when page is done loading
 	function initialize() {
