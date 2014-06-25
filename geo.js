@@ -45,7 +45,8 @@ function initialize() {
             .done(function( data ) {
                 //data = JSON.parse(data);
                 deleteMarkers();
-                var obj = data.features;
+                var obj = data;
+                console.log(obj);
                 for (var i in obj){
                     console.log("Type: " + obj[i].geometry.type);
                     console.log(obj[i].geometry);
