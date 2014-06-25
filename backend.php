@@ -45,7 +45,7 @@ $sql = "
 	SELECT  {$_POST['lat']}  AS latpoint,  {$_POST['lng']} AS longpoint
 	) AS p
 	ORDER BY distance_in_miles
-	LIMIT 10
+	LIMIT 5
 ";
   
 $result = $db->query($sql);
