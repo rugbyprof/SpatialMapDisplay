@@ -28,8 +28,8 @@ function initialize() {
         console.log("lat: " + lat);
         console.log("lng: " + lng);
         
-        console.log("Volcanoes: " + $('#volcanoes').is(':checked'));
-        console.log("Earthquakes: " + $('#earthquakes').is(':checked'));        
+        //console.log("Volcanoes: " + $('#volcanoes').is(':checked'));
+        //console.log("Earthquakes: " + $('#earthquakes').is(':checked'));        
 
         var echecked = $('#earthquakes').is(':checked');
         var vchecked = $('#volcanoes').is(':checked');
@@ -75,7 +75,8 @@ function initialize() {
 //}
 
 function process(key,value) {
-    if(isInt(key) === true)
+    
+    //if(isInt(key) === true)
         console.log(key + " : "+value);
 }
 
