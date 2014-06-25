@@ -133,8 +133,18 @@ $sql1 = "
 ";
 
 $sql2 = "
-    SELECT year,month,day,location, AsWKB(SHAPE) AS wkb 
+    SELECT 
+        year,
+        month,
+        day,
+        location, 
+        AsWKB(SHAPE) AS wkb,
+        69*haversine(latitude,longitude,latpoint, longpoint) AS distance_in_miles
     FROM earth_quakes
+	JOIN (
+	SELECT  {$_POST['lat']}  AS latpoint,  {$_POST['lng']} AS longpoint
+	) AS p
+	ORDER BY distance_in_miles
     LIMIT 10
 ";
 
