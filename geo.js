@@ -47,14 +47,12 @@ function initialize() {
                 deleteMarkers();
                 var obj = data;
                 for (var i in obj){
-                    //console.log(obj[i]);
-                    //console.log(obj[i].Type);
                     switch(obj[i].Type){
                         case "MultiPolygon":
                             addMultiPolygon(obj[i].Coordinates);
                             break;
                         case "Polygon":
-                            addPolygon(obj[i].Coordinates);
+                            addPolygon(obj[i].Coordinates,HexColor());
                             break;
                         case "Line":
                             addLine(obj[i].Coordinates);
@@ -70,9 +68,6 @@ function initialize() {
 }
 
 function addMultiPolygon(obj){
-    //console.log("MultiPolygon: ");
-    //console.log(obj);
-    //console.log(obj.length);   
     
     color = HexColor();
 
