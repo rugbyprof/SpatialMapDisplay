@@ -93,7 +93,7 @@ class MyGeoJson{
 /////////////////////////////////////////////////////////////////////////////////////
 //Main
 
-$MyGeo = new MyGeoJson('localhost','5443','5443','localhost',$_POST);
+$MyGeo = new MyGeoJson('5443_SpatialData','5443','5443','localhost',$_POST);
 
 if(isset($argv[1]) && $argv[1]=='debug' || isset($_GET['debug']) && $_GET['debug']){
     $_POST['lat'] = 33.546;
