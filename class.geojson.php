@@ -93,6 +93,13 @@ class MyGeoJson{
 /////////////////////////////////////////////////////////////////////////////////////
 //Main
 
+$MyGeo = new MyGeoJson('localhost','5443','5443','localhost',$_POST);
+
+if(isset($argv[1]) && $argv[1]=='debug' || isset($_GET['debug']) && $_GET['debug']){
+    $_POST['lat'] = 33.546;
+    $_POST['lng'] = -122.546;
+    $MyGeo->Debug(true);
+}
 
 $sql1 = "
 	SELECT 
@@ -112,20 +119,12 @@ $sql1 = "
 ";
 
 $sql2 = "
-SELECT year,month,day,location, AsWKB(SHAPE) AS wkb 
-FROM earth_quakes
-LIMIT 10
+    SELECT year,month,day,location, AsWKB(SHAPE) AS wkb 
+    FROM earth_quakes
+    LIMIT 10
 ";
 
 $sql = $sql1;
-
-$MyGeo = new MyGeoJson('localhost','5443','5443','localhost',$_POST);
-
-if(isset($argv[1]) && $argv[1]=='debug' || isset($_GET['debug']) && $_GET['debug']){
-    $_POST['lat'] = 33.546;
-    $_POST['lng'] = -122.546;
-    $MyGeo->Debug(true);
-}
 
 $MyGeo->ExecuteGeoQuery($sql);
 
