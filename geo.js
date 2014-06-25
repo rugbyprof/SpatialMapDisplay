@@ -69,13 +69,13 @@ function initialize() {
 //}
 
 function process(key,value) {
-    console.log(isInt(key) + " - " + key + " : "+value);
+    if(isInt(key) === false)
+        console.log(isInt(key) + " - " + key + " : "+value);
 }
 
 function traverse(o,func) {
     for (var i in o) {
-        if(this !== null && isInt(this) == false)
-            func.apply(this,[i,o[i]]);  
+        func.apply(this,[i,o[i]]);  
         if (o[i] !== null && typeof(o[i])=="object") {
             //going on step down in the object tree!!
             traverse(o[i],func);
