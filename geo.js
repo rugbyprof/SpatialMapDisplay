@@ -48,7 +48,7 @@ function initialize() {
                 var obj = data.features;
                 for (var i in obj){
                     switch(obj[i].geometry.type){
-                        console.log("Length: "+obj[i].geometry.coordinates.length);
+                        //console.log("Length: "+obj[i].geometry.coordinates.length);
                         case "MultiPolygon":
                             addMultiPolygon(obj[i].geometry);
                             break;
