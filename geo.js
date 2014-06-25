@@ -53,12 +53,11 @@ function initialize() {
                             addMultiPolygon(obj[i].geometry);
                             break;
                         case "Polygon":
-                            console.log("Length: "+obj[i].geometry.coordinates.length);
                             if(obj[i].geometry.coordinates.length == 1){
                                 addPolygon(obj[i].geometry.coordinates,HexColor());
                             }else{
                                 for(var j = 0;j<obj[i].geometry.coordinates.length;j++){
-                                    addPolygon(obj[i].geometry.coordinates[0][j],HexColor());
+                                    addPolygon(obj[i].geometry.coordinates[0][j][0],HexColor());
                                 }
                             }
                             break;
@@ -80,14 +79,14 @@ function addMultiPolygon(obj){
     color = HexColor();
     
     for(var i=0;i<obj.coordinates.length;i++){
-        addPolygon(obj.coordinates[i],color);
+        addPolygon(obj.coordinates[i][0],color);
     }
     
 }
 
 function addPolygon(obj,Color) {
     
-    console.log(obj);
+    console.log("Length: "+obj.length);
     
     var PolyCoords = [];
 
