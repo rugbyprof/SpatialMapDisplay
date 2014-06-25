@@ -114,7 +114,7 @@ function addPoint(obj) {
     console.log(obj[0]);
     marker = new google.maps.Marker({
         position: new google.maps.LatLng(obj[0],obj[1]),
-        title: obj.fullname,
+        //title: obj.fullname,
         map: map
     });
     markers.push(marker); //Add marker to global array of markers
