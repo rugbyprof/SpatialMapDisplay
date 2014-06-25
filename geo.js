@@ -81,7 +81,7 @@ function addMultiPolygon(obj){
 
 function addPolygon(obj,Color) {
     
-    console.log("Length: "+obj.length);
+    console.log(obj);
     
     var PolyCoords = [];
 
