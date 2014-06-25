@@ -26,7 +26,7 @@ $conn = new PDO('mysql:host=localhost;dbname=5443_SpatialData','5443','5443');
 # Build SQL SELECT statement and return the geometry as a WKB element
 
 
-$sql = "
+$sql1 = "
 	SELECT 
 		OGR_FID,
 		fullname, 
@@ -43,14 +43,14 @@ $sql = "
 	LIMIT 10
 ";
 
-$sql = "
+$sql2 = "
 SELECT year,month,day,location, AsWKB(SHAPE) AS wkb 
 FROM earth_quakes
 LIMIT 10
 ";
 
 # Try query or error
-$rs = $conn->query($sql);
+$rs = $conn->query($sql1);
 if (!$rs) {
     echo 'An SQL error occured.\n';
     exit;
