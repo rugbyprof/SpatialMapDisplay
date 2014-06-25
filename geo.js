@@ -56,9 +56,11 @@ function initialize() {
                             if(obj[i].geometry.coordinates.length == 1){
                                 addPolygon(obj[i].geometry.coordinates,HexColor());
                             }else{
-                                for(var j = 0;j<obj[i].geometry.coordinates.length;j++){
-                                    addPolygon(obj[i].geometry.coordinates[0][j][0],HexColor());
-                                }
+                                iterate(obj[i].geometry.coordinates,process);
+//                                for(var j = 0;j<obj[i].geometry.coordinates.length;j++){
+//                                    addPolygon(obj[i].geometry.coordinates[0][j],HexColor());
+//                                    
+//                                }
                             }
                             break;
                         case "Line":
@@ -77,10 +79,10 @@ function initialize() {
 function addMultiPolygon(obj){
 
     color = HexColor();
-    
-    for(var i=0;i<obj.coordinates.length;i++){
-        addPolygon(obj.coordinates[i][0],color);
-    }
+    iterate(obj.coordinates,process);
+//    for(var i=0;i<obj.coordinates.length;i++){
+//        addPolygon(obj.coordinates[i],color);
+//    }
     
 }
 
@@ -154,6 +156,12 @@ function HexColor(){
 function process(key,value) {
     //if(isInt(key) === true)
         console.log(key + " : "+value);
+}
+
+function iterate(o,func){
+    for (var i in o) {
+        func.apply(this,[i,o[i]]);
+    }
 }
 
 function traverse(o,func) {
