@@ -63,6 +63,7 @@ class MyGeoJson{
         while ($row = $this->Result->fetch(PDO::FETCH_ASSOC)) {
             $temp = $this->WkbToJson($row['wkb']);
             print_r($temp);
+            echo"<br><br>";
             //$Data[$i][$temp['type']] = $temp['coordinates'];
             unset($row['wkb']);
             unset($row['SHAPE']);          
