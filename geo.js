@@ -113,7 +113,7 @@ function addLine(obj){
 function addPoint(obj) {
     console.log(obj);
     marker = new google.maps.Marker({
-        position: new google.maps.LatLng(obj.latitude,obj.longitude),
+        position: new google.maps.LatLng(obj[0],obj[1]),
         title: obj.fullname,
         map: map
     });
