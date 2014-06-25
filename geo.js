@@ -52,7 +52,7 @@ function initialize() {
                             addMultiPolygon(obj[i].geometry);
                             break;
                         case "Polygon":
-                            addPolygon(obj[i].geometry);
+                            addPolygon(obj[i].geometry.coordinates);
                             break;
                         case "Line":
                             addLine(obj[i].geometry);
@@ -71,10 +71,9 @@ function addMultiPolygon(obj){
 
     color = HexColor();
     
-    console.log(obj);
-    
-    for(var i=0;i<obj.length;i++){
-        addPolygon(obj,color);
+    for(var i=0;i<obj.coordinates.length;i++){
+        //console.log(obj.coordinates[i]);
+        addPolygon(obj.coordinates[i],color);
     }
     
 }
