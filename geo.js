@@ -44,7 +44,7 @@ function initialize() {
         $.post("class.geojson.php", PostData)
             .done(function( data ) {
                 //data = JSON.parse(data);
-                traverse(data,process);
+                traverse(data.features,process);
                 //console.log(data.Poly.length);
                 //deleteMarkers();
                 //addPolygon(data.Poly);
