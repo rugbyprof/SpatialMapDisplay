@@ -48,27 +48,28 @@ function initialize() {
                 var obj = data;
                 for (var i in obj){
                     console.log(obj[i]);
-//                    switch(obj[i]){
-//                        case "MultiPolygon":
-//                            addMultiPolygon(obj[i].geometry);
-//                            break;
-//                        case "Polygon":
-//                            if(obj[i].geometry.coordinates.length == 1){
-//                                addPolygon(obj[i].geometry.coordinates,HexColor());
-//                            }else{
-//                                iterate(obj[i].geometry.coordinates,process);
-////                                for(var j = 0;j<obj[i].geometry.coordinates.length;j++){
-////                                    addPolygon(obj[i].geometry.coordinates[0][j],HexColor());
-////                                }
-//                            }
-//                            break;
-//                        case "Line":
-//                            addLine(obj[i].geometry);
-//                            break;
-//                        case "Point":
-//                            addPoint(obj[i].geometry);
-//                            break;
-//                    }
+                    console.log(obj[i][0]);
+                    switch(obj[i]){
+                        case "MultiPolygon":
+                            addMultiPolygon(obj[i].geometry);
+                            break;
+                        case "Polygon":
+                            if(obj[i].geometry.coordinates.length == 1){
+                                addPolygon(obj[i].geometry.coordinates,HexColor());
+                            }else{
+                                iterate(obj[i].geometry.coordinates,process);
+//                                for(var j = 0;j<obj[i].geometry.coordinates.length;j++){
+//                                    addPolygon(obj[i].geometry.coordinates[0][j],HexColor());
+//                                }
+                            }
+                            break;
+                        case "Line":
+                            addLine(obj[i].geometry);
+                            break;
+                        case "Point":
+                            addPoint(obj[i].geometry);
+                            break;
+                    }
                 }
             });
     });  
