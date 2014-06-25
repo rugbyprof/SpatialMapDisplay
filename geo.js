@@ -69,7 +69,7 @@ function initialize() {
 //}
 
 function process(key,value) {
-    console.log(key + " : "+value);
+    console.log(typeof key + " - " + key + " : "+value);
 }
 
 function traverse(o,func) {
