@@ -40,7 +40,7 @@ $sql1 = "
 	SELECT  {$_POST['lat']}  AS latpoint,  {$_POST['lng']} AS longpoint
 	) AS p
 	ORDER BY distance_in_miles
-	LIMIT 10
+	LIMIT 5
 ";
 
 $sql2 = "
