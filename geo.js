@@ -44,7 +44,7 @@ function initialize() {
         $.post("mysql_geojson.php", PostData)
             .done(function( data ) {
                 //data = JSON.parse(data);
-                HandleGeoJson(data);
+                traverse(data);
                 //console.log(data.Poly.length);
                 //deleteMarkers();
                 //addPolygon(data.Poly);
@@ -53,7 +53,22 @@ function initialize() {
 
 }
 
+function traverse(jsonObj) {
+    if( typeof jsonObj == "object" ) {
+        $.each(jsonObj, function(k,v) {
+            // k is either an array index or object key
+            traverse(v);
+        });
+    }
+    else {
+        // jsonOb is a number or string
+        console.log(jsonOB);
+    }
+}
+
+
 function HandleGeoJson(obj){
+    console.log(
     console.log(obj);
 }
 
