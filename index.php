@@ -21,6 +21,7 @@
 			margin-left: 15%;
 			padding: 20px;
 			height: 600px;
+            
 		}
     </style>
     <!-- Include Google Maps Api to generate maps -->
