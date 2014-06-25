@@ -102,6 +102,10 @@ function addPolygon(obj,c) {
     
 }
 
+function addLine(obj){
+    
+}
+
 function addPoint(obj) {
     marker = new google.maps.Marker({
         position: new google.maps.LatLng(obj.latitude,obj.longitude),
