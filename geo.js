@@ -81,7 +81,7 @@ function addPolygon(obj,c) {
     
     console.log(obj);
     
-    color = typeof c !== 'undefined' ? c : HexColor();
+    Color = typeof c !== 'undefined' ? c : HexColor();
     
     var PolyCoords = [];
 
