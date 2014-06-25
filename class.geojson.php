@@ -53,7 +53,7 @@ class MyGeoJson{
     }
     
     # Run the Geo Sql Query
-    private function ExecuteGeoQuery(){ 
+    public function ExecuteGeoQuery(){ 
        # Try query or error
         $this->Result = $this->Conn->query($this->Sql);
         if (!$this->Result) {
