@@ -47,7 +47,7 @@ function initialize() {
                 var obj = data.features;
                 for (var i in obj){
                     traverse(obj[i],process);
-                    //console.log(obj[i].features.geometry.type);
+                    console.log(obj[i].geometry.type);
                     console.log(obj[i]);
                     console.log("----------------------------------------");
                 }
