@@ -79,6 +79,8 @@ function addMultiPolygon(obj){
 
 function addPolygon(obj,c) {
     
+    console.log(obj);
+    
     color = typeof c !== 'undefined' ? c : HexColor();
     
     var PolyCoords = [];
@@ -91,10 +93,10 @@ function addPolygon(obj,c) {
     var polygon = new google.maps.Polygon({
         paths: PolyCoords,
         title: obj.fullname,
-        fillColor: obj.Color,
+        fillColor: Color,
         fillOpacity: 0.2,
         strokeWeight: 2,
-        strokeColor: obj.Color,
+        strokeColor: Color,
         map: map
     });
 
