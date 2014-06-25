@@ -71,7 +71,7 @@ function addMultiPolygon(obj){
 
     color = HexColor();
     
-    console.log(obj);
+    console.log("MultiPolygon: "+obj);
     
     for(var i=0;i<obj.length;i++){
         addPolygon(obj,color);
@@ -81,7 +81,7 @@ function addMultiPolygon(obj){
 
 function addPolygon(obj,c) {
     
-    console.log(obj);
+    console.log("Polygon: "+obj);
     
     Color = typeof c !== 'undefined' ? c : HexColor();
     
