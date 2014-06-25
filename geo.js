@@ -67,11 +67,6 @@ function traverse(jsonObj) {
 }
 
 
-function HandleGeoJson(obj){
-    console.log(
-    console.log(obj);
-}
-
 function addPolygon(obj) {
     var PolyCoords = [];
 
