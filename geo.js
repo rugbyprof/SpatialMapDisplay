@@ -25,11 +25,11 @@ function initialize() {
         var lat = event.latLng.lat();
         var lng = event.latLng.lng();
 
-        console.log("lat: " + lat);
-        console.log("lng: " + lng);
+        //console.log("lat: " + lat);
+        //console.log("lng: " + lng);
         
-        console.log("Volcanoes: " + $('#volcanoes').is(':checked'));
-        console.log("Earthquakes: " + $('#earthquakes').is(':checked'));        
+        //console.log("Volcanoes: " + $('#volcanoes').is(':checked'));
+        //console.log("Earthquakes: " + $('#earthquakes').is(':checked'));        
 
         var echecked = $('#earthquakes').is(':checked');
         var vchecked = $('#volcanoes').is(':checked');
