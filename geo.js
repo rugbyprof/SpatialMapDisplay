@@ -46,7 +46,8 @@ function initialize() {
                 //data = JSON.parse(data);
                 var obj = data.features;
                 for (var i in obj){
-                    traverse(obj[i]);
+                    //traverse(obj[i]);
+                    console.log(obj[i]);
                     console.log("----------------------------------------");
                 }
                 //console.log(data.Poly.length);
