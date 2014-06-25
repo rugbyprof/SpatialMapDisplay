@@ -151,12 +151,7 @@ $sql2 = "
 $sql3 = "
     SELECT 
         AsWKB(SHAPE) AS wkb,
-        69*haversine(latitude,longitude,latpoint, longpoint) AS distance_in_miles
     FROM railroad
-	JOIN (
-	   SELECT  {$_POST['lat']}  AS latpoint,  {$_POST['lng']} AS longpoint
-	) AS p
-	ORDER BY distance_in_miles
     LIMIT 30
 ";
 
