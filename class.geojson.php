@@ -51,7 +51,6 @@ class MyGeoJson{
             print_r($this->Sql);
             exit;
         }
-        $this->ExecuteGeoQuery();
         $this->Conn = NULL; 
     }
     
