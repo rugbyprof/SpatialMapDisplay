@@ -118,5 +118,5 @@ $sql2 = "
 
 $sql = $sql1;
 
-$MyGeo->ExecuteGeoQuery($sql);
+$MyGeo->RunQuery($sql);
 
